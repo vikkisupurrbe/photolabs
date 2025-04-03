@@ -1,6 +1,5 @@
-import FavIcon from './FavIcon';
-
 import '../styles/FavBadge.scss';
+import FavIcon from './FavIcon';
 
 const FavBadge = ({ isFavPhotoExist }) => {
   return (

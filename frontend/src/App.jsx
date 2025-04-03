@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import PhotoList from './components/PhotoList';
+import TopNavigationBar from './components/TopNavigationBar'
 import TopicList from './components/TopicList';
+import PhotoList from './components/PhotoList';
 import './App.scss';
 
 // Sample data
@@ -25,7 +26,7 @@ const sampleDataForPhotoListItem = {
 const App = () => {
   return (
     <div className="App">
-      <TopicList />
+      <TopNavigationBar />
       <PhotoList />
     </div>
   );
