@@ -7,14 +7,14 @@ const PhotoListItem = (props) => {
   console.log(props) // Debugging to ensure props are passed correctly
   return(
     <article className="photo-list-item">
-      <figure className="photo-list-item_image">
-        <img className="photo-list-item_photo" src={urls.regular} alt="Photo" />
+      <figure className="photo-list-item__image">
+        <img className="photo-list-item__photo" src={urls.regular} alt="Photo" />
       </figure>
 
-      <section className="photo-list-item_photographer">
-        <img className="photo-list-item_profile-pic" src= {user.profile} alt="Profile picture" />
-        <p className="photo-list-item_username">{user.username}</p>
-        <p className="photo-list-item_location">{location.city}, {location.country}</p>
+      <section className="photo-list-item__photographer">
+        <img className="photo-list-item__profile-pic" src= {user.profile} alt="Profile picture" />
+        <p className="photo-list-item__username">{user.username}</p>
+        <p className="photo-list-item__location">{location.city}, {location.country}</p>
       </section>
     </article>
   )
