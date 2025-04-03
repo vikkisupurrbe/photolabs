@@ -4,7 +4,7 @@ const PhotoListItem = (props) => {
   /* Insert React */
   // Pass in props
   const {location, urls, user} = props.photo;
-  console.log(props) // Debugging to ensure props are passed correctly
+
   return(
     <div className="photo-list__item">
       {/* Photo */}
