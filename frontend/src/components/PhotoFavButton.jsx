@@ -6,8 +6,8 @@ const PhotoFavButton = () => {
   // Define state for fav button
   const [fav, setFav] = useState(false);
 
-  // Create a function to switch on or off the fav button
-  const switchFav = () => setFav(!fav);
+  // Create a function to switch on or off the fav button based on the latest state value
+  const switchFav = () => setFav(prevFav => !prevFav);
 
   // Handle click function
   const handleClick = () => {
