@@ -5,12 +5,11 @@ const PhotoListItem = (props) => {
   /* Insert React */
   // Pass in props
   const {location, urls, user} = props.photo;
-  const {fav, switchFav} = props;
 
   return(
     <div className="photo-list__item">
       {/* Photo */}
-        <PhotoFavButton fav={fav} switchFav={switchFav}/>
+        <PhotoFavButton />
         <img className="photo-list__image" src={urls.regular} alt="Photo" />
       {/* Photographer info */}
       <div className="photo-list__user-details">

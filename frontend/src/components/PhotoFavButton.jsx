@@ -1,10 +1,13 @@
-// import FavIcon from './FavIcon';
 import '../styles/PhotoFavButton.scss';
 import FavIcon from './FavIcon';
+import { useState } from 'react';
 
-const PhotoFavButton = (props) => {
-  const {fav, switchFav} = props;
-  console.log(props);
+const PhotoFavButton = () => {
+  // Define state for fav button
+  const [fav, setFav] = useState(false);
+
+  // Create a function to switch on or off the fav button
+  const switchFav = () => setFav(!fav);
 
   // Handle click function
   const handleClick = () => {
@@ -14,10 +17,8 @@ const PhotoFavButton = (props) => {
   return (
     <div onClick={handleClick} className="photo-list__fav-icon">
       <div className="photo-list__fav-icon-svg">
-        {/* When fav button is on */}
-        {fav === "on" && <span><i><FavIcon selected = {true} /></i></span>}
-        {/* When fav button is off */}
-        {fav === "off" && <span><i><FavIcon selected = {false}/></i></span>}
+        {/* Pass fav state to fav button */}
+        <span><i><FavIcon selected = {fav} /></i></span>
       </div>
     </div>
   );

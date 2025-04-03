@@ -23,19 +23,12 @@ const sampleDataForPhotoListItem = {
 // Note: Rendering a single component to build components in isolation
 const App = () => {
 
-  // Define state for fav button
-  const [fav, setFav] = useState("off");
-
-  // Create a function to switch on or off the fav button
-  const switchFav = () => setFav(fav === "on" ? "off" : "on");
-
   // Create an array of 3 photo objects
   const photos = new Array(3).fill(sampleDataForPhotoListItem);
   
   // Map the array to generate components
   const PhotoListItems = photos.map((photo, index) => (
-    <PhotoListItem key={index} photo={photo} fav={fav} switchFav={switchFav}>  
-    </PhotoListItem>
+    <PhotoListItem key={index} photo={photo} />
   ))
 
   return (
