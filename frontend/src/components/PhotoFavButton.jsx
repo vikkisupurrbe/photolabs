@@ -18,7 +18,7 @@ const PhotoFavButton = () => {
     <div onClick={handleClick} className="photo-list__fav-icon">
       <div className="photo-list__fav-icon-svg">
         {/* Pass fav state to fav button */}
-        <span><i><FavIcon selected = {fav} /></i></span>
+        <span><i><FavIcon selected={fav} /></i></span>
       </div>
     </div>
   );
