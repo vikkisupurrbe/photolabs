@@ -3,13 +3,17 @@ import TopNavigationBar from '../components/TopNavigationBar';
 import PhotoList from '../components/PhotoList';
 
 const HomeRoute = (props) => {
-  const { photos, topics } = props;
+  const { photos, topics, fav, toggleFav } = props;
 
   return (
     <div className="home-route">
       {/* Insert React */}
       <TopNavigationBar topics={topics} />
-      <PhotoList photos={photos} />
+      <PhotoList
+        photos={photos}
+        fav={fav}
+        toggleFav={toggleFav}
+      />
     </div>
   );
 };
