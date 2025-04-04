@@ -8,7 +8,7 @@ const HomeRoute = (props) => {
   return (
     <div className="home-route">
       {/* Insert React */}
-      <TopNavigationBar topics={topics} />
+      <TopNavigationBar topics={topics} fav={fav} />
       <PhotoList
         photos={photos}
         fav={fav}
