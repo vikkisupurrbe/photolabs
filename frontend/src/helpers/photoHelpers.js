@@ -7,3 +7,8 @@ export const toggleFav = (photoId, setFav) => {
     [photoId]: !prevFav[photoId]
   }));
 };
+
+// Display one modal for a specific at a time
+export const switchModalOn = (photoId, setDisplayModal) => {
+  setDisplayModal(photoId);
+};
