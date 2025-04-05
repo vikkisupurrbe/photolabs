@@ -6,7 +6,7 @@ import './App.scss';
 import topics from './mocks/topics';
 import photos from './mocks/photos';
 // Import helper function
-import { toggleFav, switchModalOn } from './helpers/photoHelpers';
+import { toggleFav, switchModalOn, switchModalOff } from './helpers/photoHelpers';
 
 // Note: Rendering a single component to build components in isolation
 const App = () => {
@@ -27,7 +27,7 @@ const App = () => {
         switchModalOn={(photoId) => switchModalOn(photoId, setDisplayModal)} // pass switchModal function
       />
       {/* Click the picture to display modal */}
-      {displayModal !== null && <PhotoDetailsModal />}
+      {displayModal !== null && <PhotoDetailsModal switchModalOff={() => switchModalOff(setDisplayModal)} />}
     </div>
   );
 };

@@ -12,3 +12,8 @@ export const toggleFav = (photoId, setFav) => {
 export const switchModalOn = (photoId, setDisplayModal) => {
   setDisplayModal(photoId);
 };
+
+// Close the modal
+export const switchModalOff = (setDisplayModal) => {
+  setDisplayModal(null);
+};
