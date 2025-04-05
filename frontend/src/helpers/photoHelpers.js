@@ -9,11 +9,11 @@ export const toggleFav = (photoId, setFav) => {
 };
 
 // Display one modal for a specific at a time
-export const switchModalOn = (photoId, setDisplayModal) => {
-  setDisplayModal(photoId);
+export const switchModalOn = (photo, setSelectedPhoto) => {
+  setSelectedPhoto(photo);
 };
 
 // Close the modal
-export const switchModalOff = (setDisplayModal) => {
-  setDisplayModal(null);
+export const switchModalOff = (setSelectedPhoto) => {
+  setSelectedPhoto(null);
 };

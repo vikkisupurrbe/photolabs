@@ -8,10 +8,7 @@ const PhotoList = (props) => {
     return (
       <PhotoListItem
         key={photo.id}
-        location={photo.location}
-        urls={photo.urls}
-        user={photo.user}
-        photoId={photo.id}
+        photo={photo}
         fav={fav}
         toggleFav={toggleFav}
         switchModalOn={switchModalOn}

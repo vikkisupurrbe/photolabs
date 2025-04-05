@@ -13,8 +13,8 @@ const App = () => {
   // Define state for fav button
   const [fav, setFav] = useState({});
 
-  // Define the state for displaying the model
-  const [displayModal, setDisplayModal] = useState(null);
+  // Define the state for displaying the modal
+  const [selectedPhoto, setSelectedPhoto] = useState(null);
 
   return (
     <div className="App">
@@ -23,10 +23,10 @@ const App = () => {
         topics={topics}
         fav={fav} // Pass fav state
         toggleFav={(photoId) => toggleFav(photoId, setFav)} // Pass toggle fav function
-        switchModalOn={(photoId) => switchModalOn(photoId, setDisplayModal)} // pass switchModal function
+        switchModalOn={(photo) => switchModalOn(photo, setSelectedPhoto)} // pass switchModal function
       />
       {/* Click the picture to display modal */}
-      {displayModal !== null && <PhotoDetailsModal photos={photos} displayModal={displayModal} switchModalOff={() => switchModalOff(setDisplayModal)} />}
+      {selectedPhoto !== null && <PhotoDetailsModal photos={photos} selectedPhoto={selectedPhoto} switchModalOff={() => switchModalOff(setSelectedPhoto)} />}
     </div>
   );
 };
