@@ -1,6 +1,6 @@
-import React from 'react';
-import { useState } from 'react';
+import React, { useState }  from 'react';
 import HomeRoute from './routes/HomeRoute'
+import PhotoDetailsModal from './routes/PhotoDetailsModal';
 import './App.scss';
 // Import mock data
 import topics from './mocks/topics';
@@ -21,6 +21,7 @@ const App = () => {
         fav={fav} // Pass fav state
         toggleFav={(photoId) => toggleFav(photoId, setFav)} // Pass toggle fav function
       />
+      <PhotoDetailsModal />
     </div>
   );
 };
