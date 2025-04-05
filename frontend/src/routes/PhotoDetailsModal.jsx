@@ -2,7 +2,10 @@ import '../styles/PhotoDetailsModal.scss'
 import closeSymbol from '../assets/closeSymbol.svg';
 
 const PhotoDetailsModal = (props) => {
-  const { switchModalOff } = props;
+  const { photos, switchModalOff, displayModal } = props;
+  // Find the photo with the right id
+  const selectedPhoto = photos.find((photo) => photo.id === displayModal);
+  console.log(selectedPhoto);
 
   // Handle click function
   const handleClick = () => {

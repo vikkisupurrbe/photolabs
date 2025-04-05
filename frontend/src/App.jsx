@@ -23,11 +23,10 @@ const App = () => {
         topics={topics}
         fav={fav} // Pass fav state
         toggleFav={(photoId) => toggleFav(photoId, setFav)} // Pass toggle fav function
-        displayModal={displayModal} // Pass modal state
         switchModalOn={(photoId) => switchModalOn(photoId, setDisplayModal)} // pass switchModal function
       />
       {/* Click the picture to display modal */}
-      {displayModal !== null && <PhotoDetailsModal switchModalOff={() => switchModalOff(setDisplayModal)} />}
+      {displayModal !== null && <PhotoDetailsModal photos={photos} displayModal={displayModal} switchModalOff={() => switchModalOff(setDisplayModal)} />}
     </div>
   );
 };
