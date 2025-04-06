@@ -4,26 +4,24 @@ import PhotoListItem from "../components/PhotoListItem";
 import PhotoFavButton from '../components/PhotoFavButton';
 
 const PhotoDetailsModal = (props) => {
-  const { switchModalOff, selectedPhoto, fav, toggleFav } = props;
-  console.log(props);
+  const { onClosePhotoDetailsModal, selectedPhoto, fav, updateToFavPhotoIds } = props;
 
   // For each selected photo, show its similar photos
-
   const similarPhotos = Object.values(selectedPhoto.similar_photos).map((similarPhoto) => {
     return (
       <PhotoListItem
         key={similarPhoto.id}
         photo={similarPhoto}
         fav={fav}
-        toggleFav={toggleFav}
-        switchModalOn={() => { }}
+        updateToFavPhotoIds={updateToFavPhotoIds}
+        setPhotoSelected={() => { }}
       />
     );
   })
 
   // Handle click function
   const handleClick = () => {
-    switchModalOff();
+    onClosePhotoDetailsModal();
   };
 
   return (
@@ -38,7 +36,7 @@ const PhotoDetailsModal = (props) => {
         <PhotoFavButton
           photoId={selectedPhoto.id}
           fav={fav}
-          toggleFav={toggleFav}
+          updateToFavPhotoIds={updateToFavPhotoIds}
         />
         {/* Larger version of the selected photo and its info */}
         <img className="photo-details-modal__image" src={selectedPhoto.urls.full} alt="Larger photo" />

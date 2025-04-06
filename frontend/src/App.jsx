@@ -14,26 +14,24 @@ const App = () => {
 
   const { state, updateToFavPhotoIds, setPhotoSelected, onClosePhotoDetailsModal } = useApplicationData();
 
-  console.log(state, updateToFavPhotoIds, setPhotoSelected, onClosePhotoDetailsModal);
-
   return (
     <div className="App">
       <HomeRoute
         photos={photos}
         topics={topics}
         fav={state.fav} // Pass fav state
-        toggleFav={updateToFavPhotoIds} // Pass toggle fav function
-        switchModalOn={setPhotoSelected} // Select a photo to open modal
+        updateToFavPhotoIds={updateToFavPhotoIds} // Pass toggle fav function
+        setPhotoSelected={setPhotoSelected} // Select a photo to open modal
       />
       {/* Click the picture to display modal */}
       {state.selectedPhoto !== null &&
         <PhotoDetailsModal
           photos={photos}
           selectedPhoto={state.selectedPhoto}
-          switchModalOff={onClosePhotoDetailsModal}
+          onClosePhotoDetailsModal={onClosePhotoDetailsModal}
           fav={state.fav} // Pass fav state
-          toggleFav={updateToFavPhotoIds} // Pass toggle fav function
-          switchModalOn={setPhotoSelected} // Select a photo to open modal
+          updateToFavPhotoIds={updateToFavPhotoIds} // Pass toggle fav function
+          setPhotoSelected={setPhotoSelected} // Select a photo to open modal
         />}
     </div>
   );

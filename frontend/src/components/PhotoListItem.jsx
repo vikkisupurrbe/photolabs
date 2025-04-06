@@ -2,11 +2,11 @@ import "../styles/PhotoListItem.scss";
 import PhotoFavButton from './PhotoFavButton';
 
 const PhotoListItem = (props) => {
-  const { photo, fav, toggleFav, switchModalOn } = props;
+  const { photo, fav, updateToFavPhotoIds, setPhotoSelected } = props;
 
   // Handle click function
   const handleClick = () => {
-    switchModalOn(photo);
+    setPhotoSelected(photo);
   };
 
   return (
@@ -15,7 +15,7 @@ const PhotoListItem = (props) => {
       <PhotoFavButton
         photoId={photo.id}
         fav={fav}
-        toggleFav={toggleFav}
+        updateToFavPhotoIds={updateToFavPhotoIds}
       />
       <img onClick={handleClick} className="photo-list__image" src={photo.urls.regular} alt="Photo" />
 

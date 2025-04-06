@@ -2,7 +2,7 @@ import "../styles/PhotoList.scss";
 import PhotoListItem from "./PhotoListItem";
 
 const PhotoList = (props) => {
-  const { fav, toggleFav, switchModalOn } = props;
+  const { fav, updateToFavPhotoIds, setPhotoSelected } = props;
 
   const photos = props.photos.map((photo) => {
     return (
@@ -10,8 +10,8 @@ const PhotoList = (props) => {
         key={photo.id}
         photo={photo}
         fav={fav}
-        toggleFav={toggleFav}
-        switchModalOn={switchModalOn}
+        updateToFavPhotoIds={updateToFavPhotoIds}
+        setPhotoSelected={setPhotoSelected}
       />
     );
   });

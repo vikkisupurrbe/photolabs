@@ -2,11 +2,11 @@ import '../styles/PhotoFavButton.scss';
 import FavIcon from './FavIcon';
 
 const PhotoFavButton = (props) => {
-  const { photoId, fav, toggleFav } = props;
+  const { photoId, fav, updateToFavPhotoIds } = props;
 
   // Handle click function
   const handleClick = () => {
-    toggleFav(photoId);
+    updateToFavPhotoIds(photoId);
   };
 
   return (
