@@ -26,7 +26,15 @@ const App = () => {
         switchModalOn={(photo) => switchModalOn(photo, setSelectedPhoto)} // pass switchModal function
       />
       {/* Click the picture to display modal */}
-      {selectedPhoto !== null && <PhotoDetailsModal photos={photos} selectedPhoto={selectedPhoto} switchModalOff={() => switchModalOff(setSelectedPhoto)} />}
+      {selectedPhoto !== null &&
+        <PhotoDetailsModal
+          photos={photos}
+          selectedPhoto={selectedPhoto}
+          switchModalOff={() => switchModalOff(setSelectedPhoto)}
+          fav={fav} // Pass fav state
+          toggleFav={(photoId) => toggleFav(photoId, setFav)} // Pass toggle fav function
+          switchModalOn={(photo) => switchModalOn(photo, setSelectedPhoto)} // pass switchModal function 
+        />}
     </div>
   );
 };
