@@ -1,14 +1,25 @@
 import '../styles/PhotoDetailsModal.scss'
 import closeSymbol from '../assets/closeSymbol.svg';
-import PhotoList from "../components/PhotoList";
+import PhotoListItem from "../components/PhotoListItem";
+import PhotoFavButton from '../components/PhotoFavButton';
 
 const PhotoDetailsModal = (props) => {
-  const { switchModalOff, selectedPhoto, fav, toggleFav, switchModalOn } = props;
+  const { switchModalOff, selectedPhoto, fav, toggleFav } = props;
   console.log(props);
 
   // For each selected photo, show its similar photos
 
-  const similarPhotos = Object.values(selectedPhoto.similar_photos);
+  const similarPhotos = Object.values(selectedPhoto.similar_photos).map((similarPhoto) => {
+    return (
+      <PhotoListItem
+        key={similarPhoto.id}
+        photo={similarPhoto}
+        fav={fav}
+        toggleFav={toggleFav}
+        switchModalOn={() => { }}
+      />
+    );
+  })
 
   // Handle click function
   const handleClick = () => {
@@ -24,6 +35,11 @@ const PhotoDetailsModal = (props) => {
 
       {/* Wrapper for the image and photographer info */}
       <div className="photo-details-modal__images">
+        <PhotoFavButton
+          photoId={selectedPhoto.id}
+          fav={fav}
+          toggleFav={toggleFav}
+        />
         {/* Larger version of the selected photo and its info */}
         <img className="photo-details-modal__image" src={selectedPhoto.urls.full} alt="Larger photo" />
 
@@ -42,12 +58,7 @@ const PhotoDetailsModal = (props) => {
         <div>
           <header className="photo-details-modal__header">Similar Photos</header>
           <div className="photo-details-modal__top-bar">
-            <PhotoList
-              photos={similarPhotos}
-              fav={fav}
-              toggleFav={toggleFav}
-              switchModalOn={switchModalOn}
-            />
+            {similarPhotos}
           </div>
         </div>
 
