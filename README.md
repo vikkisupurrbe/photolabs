@@ -2,10 +2,10 @@
 A simple React app to browse and view cool photos!
 
 ## Features
-* 🖼 Browse a gallery of photos
-* 🔍 View photo details in a modal
-* 🏷 Filter photos by topic
-* ✨ Smooth UI interactions (hover effects, modal animations)
+* Browse a gallery of photos 🖼
+* View photo details in a modal 🔍
+* Filter photos by topic 🏷
+* Smooth UI interactions (hover effects, modal animations) ✨
 
 ## Getting Started
 * [Frontend Setup Instructions](/frontend/)
@@ -18,6 +18,6 @@ A simple React app to browse and view cool photos!
 * Express
 
 ## Screenshots
-* !["Main page"](https://github.com/vikkisupurrbe/photolabs/blob/main/docs/main_page.png?raw=true)
-* !["Topic List"](https://github.com/vikkisupurrbe/photolabs/blob/main/docs/topic_list.png?raw=true)
-* !["Modal"](https://github.com/vikkisupurrbe/photolabs/blob/main/docs/modal_similar_photos.png?raw=true)
+!["Main page"](https://github.com/vikkisupurrbe/photolabs/blob/main/docs/main_page.png?raw=true)\
+!["Topic List"](https://github.com/vikkisupurrbe/photolabs/blob/main/docs/topic_list.png?raw=true)\
+!["Modal"](https://github.com/vikkisupurrbe/photolabs/blob/main/docs/modal_similar_photos.png?raw=true)
