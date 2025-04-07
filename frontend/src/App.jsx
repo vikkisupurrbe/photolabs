@@ -17,9 +17,9 @@ const App = () => {
       <HomeRoute
         photos={state.photoData}
         topics={state.topicData}
-        fav={state.fav} // Pass fav state
-        updateToFavPhotoIds={updateToFavPhotoIds} // Pass toggle fav function
-        setPhotoSelected={setPhotoSelected} // Select a photo to open modal
+        fav={state.fav} // Favorite photo IDs
+        updateToFavPhotoIds={updateToFavPhotoIds} // Function to toggle favorite status
+        setPhotoSelected={setPhotoSelected} // Select a photo and open modal
         setTopicSelected={setTopicSelected} // Display photos based on selected topic
       />
       {/* Click the picture to display modal */}
@@ -28,9 +28,9 @@ const App = () => {
           photos={state.photoData}
           selectedPhoto={state.selectedPhoto}
           onClosePhotoDetailsModal={onClosePhotoDetailsModal}
-          fav={state.fav} // Pass fav state
-          updateToFavPhotoIds={updateToFavPhotoIds} // Pass toggle fav function
-          setPhotoSelected={setPhotoSelected} // Select a photo to open modal
+          fav={state.fav}
+          updateToFavPhotoIds={updateToFavPhotoIds}
+          setPhotoSelected={setPhotoSelected}
         />}
     </div>
   );

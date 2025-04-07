@@ -59,10 +59,7 @@ const PhotoDetailsModal = (props) => {
             {similarPhotos}
           </div>
         </div>
-
       </div>
-
-
     </div>
   )
 };
