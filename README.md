@@ -1,9 +1,23 @@
-# Photolabs
+# Photolabs 📸
+A simple React app to browse and view cool photos!
 
-The PhotoLabs project for the Web Development React course programming.
+## Features
+🖼 Browse a gallery of photos
+🔍 View photo details in a modal
+🏷 Filter photos by topic
+✨ Smooth UI interactions (hover effects, modal animations)
 
-## Setup
-
+## Getting Started
+[Frontend Setup Instructions](/frontend/)
 [Backend Setup Instructions](/backend/)
 
-[Frontend Setup Instructions](/frontend/)
+## Tech Stack
+React
+JavaScript
+SCSS (or CSS)
+Express
+
+## Screenshots
+!["Main page"](URL)
+!["Topic List"](URL)
+!["Modal"](URL)
