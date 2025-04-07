@@ -3,7 +3,7 @@ import TopicList from './TopicList';
 import FavBadge from './FavBadge'
 
 const TopNavigation = (props) => {
-  const { topics, fav } = props;
+  const { topics, fav, setTopicSelected } = props;
 
   // Check if fav has any true values
   const isFavPhotoExist = (fav) => Object.values(fav).some(value => value === true);
@@ -11,7 +11,10 @@ const TopNavigation = (props) => {
   return (
     <div className="top-nav-bar">
       <span className="top-nav-bar__logo">PhotoLabs</span>
-      <TopicList topics={topics} />
+      <TopicList
+        topics={topics}
+        setTopicSelected={setTopicSelected}
+      />
       <FavBadge isFavPhotoExist={isFavPhotoExist(fav)} />
     </div>
   )

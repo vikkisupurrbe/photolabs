@@ -53,7 +53,8 @@ const useApplicationData = () => {
     // use the fetch API to make an AJAX request to the backend
     fetch('http://localhost:8001/api/photos')
       .then(res => res.json())
-      .then(data => dispatch({ type: "SET_PHOTO_DATA", payload: data }));
+      .then(data => dispatch({ type: "SET_PHOTO_DATA", payload: data }))
+      .catch(error => console.error('Error fetching photo data:', error));
   }, []);
 
   // Fetch topic data
@@ -61,7 +62,8 @@ const useApplicationData = () => {
     // use the fetch API to make an AJAX request to the backend
     fetch('http://localhost:8001/api/topics')
       .then(res => res.json())
-      .then(data => dispatch({ type: "SET_TOPIC_DATA", payload: data }));
+      .then(data => dispatch({ type: "SET_TOPIC_DATA", payload: data }))
+      .catch(error => console.error('Error fetching topic data:', error));
   }, []);
 
   // Action: update favorite photo
@@ -79,11 +81,20 @@ const useApplicationData = () => {
     dispatch({ type: "CLOSE_MODAL" });
   };
 
+  // Action: set current topic
+  const setTopicSelected = (topicId) => {
+    fetch(`http://localhost:8001/api/topics/${topicId}/photos`)
+      .then(res => res.json())
+      .then(data => dispatch({ type: "SET_PHOTO_DATA", payload: data }))
+      .catch(error => console.error('Error fetching topic photos:', error));
+  }
+
   return {
     state, // Contains fav and selectedPhoto states
     updateToFavPhotoIds,
     setPhotoSelected,
-    onClosePhotoDetailsModal
+    onClosePhotoDetailsModal,
+    setTopicSelected
   };
 };
 
