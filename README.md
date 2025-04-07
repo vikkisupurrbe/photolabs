@@ -1,4 +1,4 @@
-# Photolabs 📸
+# PhotoLabs 📸
 A simple React app to browse and view cool photos!
 
 ## Features
