@@ -1,9 +1,11 @@
-import { useReducer } from "react";
+import { useReducer, useEffect } from "react";
 
 // Initial state of the app
 const initialState = {
   fav: {}, // Favorite photo IDs
   selectedPhoto: null, // Currently selected photo (for modal)
+  photoData: [],
+  topicData: []
 };
 
 // Reducer function
@@ -27,6 +29,17 @@ function reducer(state, action) {
         ...state,
         selectedPhoto: null
       };
+    case "SET_PHOTO_DATA":
+      return {
+        ...state,
+        photoData: action.payload
+      };
+    case "SET_TOPIC_DATA":
+      return {
+        ...state,
+        topicData: action.payload
+      };
+
     default:
       return state;
   }
@@ -34,6 +47,22 @@ function reducer(state, action) {
 
 const useApplicationData = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  // Fetch photo data
+  useEffect(() => {
+    // use the fetch API to make an AJAX request to the backend
+    fetch('http://localhost:8001/api/photos')
+      .then(res => res.json())
+      .then(data => dispatch({ type: "SET_PHOTO_DATA", payload: data }));
+  }, []);
+
+  // Fetch topic data
+  useEffect(() => {
+    // use the fetch API to make an AJAX request to the backend
+    fetch('http://localhost:8001/api/topics')
+      .then(res => res.json())
+      .then(data => dispatch({ type: "SET_TOPIC_DATA", payload: data }));
+  }, []);
 
   // Action: update favorite photo
   const updateToFavPhotoIds = (photoId) => {

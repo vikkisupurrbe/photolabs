@@ -1,11 +1,9 @@
 // Import built-ins and components
-import React, { useState } from 'react';
+import React from 'react';
 import HomeRoute from './routes/HomeRoute'
 import PhotoDetailsModal from './routes/PhotoDetailsModal'
 import './App.scss';
-// Import mock data
-import topics from './mocks/topics';
-import photos from './mocks/photos';
+
 // Import custom hook
 import useApplicationData from "./hooks/useApplicationData";
 
@@ -17,8 +15,8 @@ const App = () => {
   return (
     <div className="App">
       <HomeRoute
-        photos={photos}
-        topics={topics}
+        photos={state.photoData}
+        topics={state.topicData}
         fav={state.fav} // Pass fav state
         updateToFavPhotoIds={updateToFavPhotoIds} // Pass toggle fav function
         setPhotoSelected={setPhotoSelected} // Select a photo to open modal
@@ -26,7 +24,7 @@ const App = () => {
       {/* Click the picture to display modal */}
       {state.selectedPhoto !== null &&
         <PhotoDetailsModal
-          photos={photos}
+          photos={state.photoData}
           selectedPhoto={state.selectedPhoto}
           onClosePhotoDetailsModal={onClosePhotoDetailsModal}
           fav={state.fav} // Pass fav state
