@@ -83,7 +83,11 @@ const useApplicationData = () => {
 
   // Action: set current topic
   const setTopicSelected = (topicId) => {
-    fetch(`http://localhost:8001/api/topics/${topicId}/photos`)
+    const url = topicId
+      ? `http://localhost:8001/api/topics/${topicId}/photos`
+      : `http://localhost:8001/api/photos`; // Default photos
+
+    fetch(url)
       .then(res => res.json())
       .then(data => dispatch({ type: "SET_PHOTO_DATA", payload: data }))
       .catch(error => console.error('Error fetching topic photos:', error));
