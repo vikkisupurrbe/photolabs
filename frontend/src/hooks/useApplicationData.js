@@ -51,7 +51,7 @@ const useApplicationData = () => {
   // Fetch photo data
   useEffect(() => {
     // use the fetch API to make an AJAX request to the backend
-    fetch('http://localhost:8001/api/photos')
+    fetch('/api/photos')
       .then(res => res.json())
       .then(data => dispatch({ type: "SET_PHOTO_DATA", payload: data }))
       .catch(error => console.error('Error fetching photo data:', error));
@@ -60,7 +60,7 @@ const useApplicationData = () => {
   // Fetch topic data
   useEffect(() => {
     // use the fetch API to make an AJAX request to the backend
-    fetch('http://localhost:8001/api/topics')
+    fetch('/api/topics')
       .then(res => res.json())
       .then(data => dispatch({ type: "SET_TOPIC_DATA", payload: data }))
       .catch(error => console.error('Error fetching topic data:', error));
@@ -84,8 +84,8 @@ const useApplicationData = () => {
   // Action: set current topic
   const setTopicSelected = (topicId) => {
     const url = topicId
-      ? `http://localhost:8001/api/topics/${topicId}/photos`
-      : `http://localhost:8001/api/photos`; // Default photos
+      ? `/api/topics/${topicId}/photos`
+      : `/api/photos`; // Default photos
 
     fetch(url)
       .then(res => res.json())
